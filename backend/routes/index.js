@@ -11,6 +11,9 @@ router.post('/user/login', user.login);
 router.post('/user/register', user.register);
 
 //content
+const content = require('../controllers/content');
+router.get('/:file(*)', content.download);
+
 
 //export
 module.exports = router;
