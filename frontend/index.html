@@ -3,23 +3,44 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ushar</title>
+    <title>ushar</title>
 
-    <script src="/jquery/dist/jquery.min.js"></script>
-    <script src="/angular/angular.min.js"></script>
+    <!-- CSS -->
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href='/font-awesome/css/font-awesome.min.css'>
-    <script src="/angular-route/angular-route.min.js"></script>
-    <script src='/common/libClient.js'></script>
 
+     <!-- jquery, angular -->
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/angular/angular.min.js"></script>
+    <script src="/angular-route/angular-route.min.js"></script>
+
+    <!-- material design -->
+    <link rel="stylesheet" href="/angular-material/angular-material.css">
+    <script src="/angular-aria/angular-aria.js"></script> 
+    <script src="/angular-animate/angular-animate.js"></script> 
+    <script src="/angular-material/angular-material.js"></script> 
+
+    <!-- libs -->
+    <script src='/common/libClient.js'></script>
     <script src='/routes_client.js'></script>
-    <script src='/home/home.controller.js'></script>
+
+    <!-- services  -->
     <script src='/services/user.service.js'></script>
+    <script src='/services/media.service.js'></script>
+
+     <!-- HOME -->
+    <script src='/home/home.controller.js'></script>
+    
+
 </head>
 
 <body>
-    body index.html
-    <div ng-view></div>
+    <div class="container-fluid text-center">
+        <div class="row content" ng-view>
+        </div>
+    </div>
 </body>
 
 </html>
+
+

@@ -1,0 +1,10 @@
+1# backend->controller->media->listfiles viene triggerato 3 volte a ogni chiamata, console.log("API listFiles success!") appare 3 volte
+
+2# this message randomically pop up: "Sat, 03 Jun 2017 12:26:14 GMT express deprecated req.host: Use req.hostname instead at <anonymous>:1:49"
+
+3# non scarica i .*
+
+
+TODO:
+
+- gestione delle cartelle

@@ -1,12 +1,14 @@
 {
-  "name": "commoditytrading",
+  "name": "ushar",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "ndm": "nodemon",
     "eth": "testrpc -m \"cat category sport grid anger game language leisure edge dumb canvas feel\"",
-    "all": "run-p eth ndm"
+    "all": "run-p eth ndm",
+    "mongo": "C:/\"Program Files\"/MongoDB/Server/3.4/bin/mongod.exe",
+    "chrome": "node --inspect bin/www"
   },
   "engines": {
     "node": "~7.5.0",
@@ -14,9 +16,11 @@
   },
   "dependencies": {
     "angular": "^1.6.2",
+    "angular-animate": "^1.6.4",
+    "angular-aria": "^1.6.4",
+    "angular-material": "^1.1.4",
     "angular-route": "^1.6.2",
     "angular-ui-bootstrap": "^2.5.0",
-    "pug": "~2.0.0-beta11",
     "body-parser": "~1.16.0",
     "bootstrap": "^3.3.7",
     "cookie-parser": "~1.4.3",
@@ -33,6 +37,7 @@
     "npm-run-all": "^4.0.2",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
+    "pug": "~2.0.0-beta11",
     "request": "^2.79.0",
     "serve-favicon": "~2.3.2"
   }

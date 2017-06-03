@@ -11,8 +11,11 @@ router.post('/user/login', user.login);
 router.post('/user/register', user.register);
 
 //content
-const content = require('../controllers/content');
-router.get('/:file(*)', content.download);
+const media = require('../controllers/media');
+router.get('/media/download/:file', media.download);
+router.get('/media/listFiles', media.listFiles);
+
+
 
 
 //export
