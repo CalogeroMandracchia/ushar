@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const User = mongoose.model('User');
 const lib = require('../../public/common/libServer');
 const crypto = require('crypto');
+const os = require("os");
 
 //create
 const addUser = (req, res) =>
@@ -134,11 +135,23 @@ const login = (req, res) =>
 
 };
 
+
+//get host name
+const getHostname = (req, res) => 
+{
+      const hostname = os.hostname();
+      console.log("hostname: " + hostname);
+      lib.sendRes(res, 200, { "hostname": hostname } );
+      return;
+};
+
+
 module.exports = {
   addUser,
   getUser,
   updateUser,
   deleteUser,
   register,
-  login
+  login,
+  getHostname
 }

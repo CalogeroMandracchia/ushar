@@ -1,8 +1,7 @@
 const fs = require('fs');
 const lib = require('../../public/common/libServer');
 const dirPath = 'C:/Users/cmandracchia/Desktop/ushar';
-const os = require("os");
-console.log("name: " + os.hostname());
+
 
 //download
 const download = (req, res) =>
@@ -14,7 +13,7 @@ const download = (req, res) =>
     const path = root + '/' + file;
     //nota: NON usare lib.sendRes perché con res.download stai già mandando res
     // altrimenti scateni-> Error: Can't set headers after they are sent.
-    res.download(path, (err) => 
+    res.download(path, {dotfiles: 'allow'}, (err) => 
     { 
         if (err)
         {

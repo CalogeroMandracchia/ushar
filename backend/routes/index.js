@@ -9,6 +9,7 @@ router.post('/user/update', user.updateUser);
 router.delete('/user/delete', user.deleteUser);
 router.post('/user/login', user.login);
 router.post('/user/register', user.register);
+router.get('/user/getHostname', user.getHostname);
 
 //content
 const media = require('../controllers/media');

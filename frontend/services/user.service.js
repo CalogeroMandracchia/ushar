@@ -1,8 +1,12 @@
 function userServices($http) 
 {
     const self = this;
-    const bla = (arg) => { self.bla = arg};
+
+    self.getHostname = (file) => { return $http.get('/user/getHostname'); }
 }
+
+
+
 
 angular
     .module('ushar')
