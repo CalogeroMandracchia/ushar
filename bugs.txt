@@ -4,6 +4,12 @@
 
 3# non scarica i .*
 
+4# togliere martellate in home.view e media
+
+5# togliere DB
+
+6# aggiustare grafica
+
 
 TODO:
 

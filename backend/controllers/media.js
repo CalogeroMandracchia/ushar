@@ -1,7 +1,5 @@
 const fs = require('fs');
-const lib = require('../../public/common/libServer');
-const dirPath = 'C:/Users/cmandracchia/Desktop/ushar';
-
+const lib = require('./lib');
 
 //download
 const download = (req, res) =>
@@ -28,6 +26,7 @@ const download = (req, res) =>
 //list files
 const listFiles = (req, res) =>
 {
+    const dirPath = lib.getHomeDir();
     const list = (err, files) => { if (err) { return console.error("API listFiles error: " + err); } console.log("API listFiles success!"); return lib.sendRes(res, 200, files);}
     const ifNotExist = (err) => { if(err.code != 'EEXIST') {console.error(err); return lib.sendRes(res, 500, err)} }
 

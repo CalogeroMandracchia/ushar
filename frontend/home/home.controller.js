@@ -1,18 +1,24 @@
-const HomeCtrl = function ($scope, $mdDialog, mediaServices, userServices) 
+const HomeCtrl = function ($scope, $mdDialog, mediaServices, configServices) 
 {
     $scope.title = "ushar";
     
-
+    // $scope.files 
     mediaServices.listFiles()
         .then( (data) => { $scope.files = data.data} )
         .catch( lib.logError );
 
-      
-    userServices.getHostname()
+    // $scope.hostname
+    configServices.getHostname()
       .then( (data) => { $scope.hostname = data.data.hostname} )
       .catch( lib.logError );
 
-  $scope.goToPerson = function(file, event) {
+    // $scope.homedir
+    configServices.getHomeDir()
+      .then( (data) => { $scope.homedir = data.data.homedir} )
+      .catch( lib.logError ); 
+
+  $scope.goToPerson = function(file, event) 
+  {
     $mdDialog.show(
       $mdDialog.alert()
         .title('Download')
@@ -22,6 +28,8 @@ const HomeCtrl = function ($scope, $mdDialog, mediaServices, userServices)
         .targetEvent(event)
     );
   };
+
+  $scope.download = (file) => { return "http://" + $scope.hostname + ":3000/api/media/download/" + file; };
 
 }
 
