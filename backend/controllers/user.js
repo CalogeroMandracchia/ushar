@@ -139,10 +139,10 @@ const login = (req, res) =>
 //get host name
 const getHostname = (req, res) => 
 {
-      const hostname = os.hostname();
+      let hostname = os.hostname();
+      hostname = /[^.]*/.exec(hostname)[0]; 
       console.log("hostname: " + hostname);
       lib.sendRes(res, 200, { "hostname": hostname } );
-      return;
 };
 
 

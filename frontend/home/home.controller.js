@@ -9,7 +9,7 @@ const HomeCtrl = function ($scope, $mdDialog, mediaServices, userServices)
 
       
     userServices.getHostname()
-      .then( (data) => { $scope.hostname = data.data} )
+      .then( (data) => { $scope.hostname = data.data.hostname} )
       .catch( lib.logError );
 
   $scope.goToPerson = function(file, event) {

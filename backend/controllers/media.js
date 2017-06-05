@@ -13,7 +13,7 @@ const download = (req, res) =>
     const path = root + '/' + file;
     //nota: NON usare lib.sendRes perché con res.download stai già mandando res
     // altrimenti scateni-> Error: Can't set headers after they are sent.
-    res.download(path, {dotfiles: 'allow'}, (err) => 
+    res.download(path, (err) => 
     { 
         if (err)
         {
