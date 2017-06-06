@@ -7,7 +7,8 @@ const download = (req, res) =>
     const file = req.params.file;
     const client = req.ip;
     console.log("API download: request from: " + client + " for " + file);
-    const root = "C:/Users/cmandracchia/Desktop/ushar";
+
+    const root = lib.getHomeDir();
     const path = root + '/' + file;
     //nota: NON usare lib.sendRes perché con res.download stai già mandando res
     // altrimenti scateni-> Error: Can't set headers after they are sent.
