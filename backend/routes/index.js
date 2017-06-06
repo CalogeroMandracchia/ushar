@@ -8,9 +8,8 @@ router.get('/config/getHomeDir', config.getHomeDir);
 
 //content
 const media = require('../controllers/media');
+router.get('/media/download/:file', media.download);
 router.get('/media/listFiles', media.listFiles);
-router.post('/media/download/:file', media.download);
-
 
 
 //export

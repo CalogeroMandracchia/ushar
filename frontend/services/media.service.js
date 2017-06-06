@@ -4,7 +4,7 @@ function mediaServices($http)
 
     self.listFiles = () => { return $http.get('/api/media/listFiles'); }
 
-    self.download = (file) => { return $http.post('/api/media/download', {file: file}); }
+    self.download = (file) => { return $http.get('/api/media/download/' + file); }
 }
 
 angular

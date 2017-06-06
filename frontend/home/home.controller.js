@@ -29,8 +29,6 @@ const HomeCtrl = function ($scope, $mdDialog, mediaServices, configServices)
     );
   };
 
-  $scope.download = (file) => { return "http://" + $scope.hostname + ":3000/api/media/download/" + file; };
-
 }
 
 angular
