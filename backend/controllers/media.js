@@ -29,7 +29,7 @@ const listFiles = (req, res) =>
 {
     const dirPath = lib.getHomeDir();
     const list = (err, files) => { if (err) { return console.error("API listFiles error: " + err); } console.log("API listFiles success!"); return lib.sendRes(res, 200, files);}
-    const ifNotExist = (err) => { if(err.code != 'EEXIST') {console.error(err); return lib.sendRes(res, 500, err)} }
+    const ifNotExist = (err) => { if(err && err.code != 'EEXIST') {console.error(err); return lib.sendRes(res, 500, err)} }
 
     //in node.js there has been a lot of debate in what using for checking if a file does exists or not.
     // https://nodejs.org/dist/latest-v8.x/docs/api/fs.html#fs_fs_exists_path_callback
