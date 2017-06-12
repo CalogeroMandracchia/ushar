@@ -20,15 +20,18 @@
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
+    "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "jquery": "^3.1.1",
     "morgan": "~1.7.0",
     "request": "^2.79.0",
     "serve-favicon": "~2.3.2"
   },
-  "repository": 
-  {
+  "repository": {
     "type": "git",
     "url": "https://github.com/CalogeroMandracchia/ushar.git"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.4"
   }
 }
