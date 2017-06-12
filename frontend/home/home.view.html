@@ -1,8 +1,9 @@
-<div layout="column" layout-xs layout-margin>
+<div layout-padding layout-margin layout-align="center center">
 
-  <md-toolbar layout-margin>
-    <div class="md-toolbar-tools" layout-margin>
-      <h2 flex md-truncate layout-margin>{{title}}</h2>
+  <div flex="33">
+  <md-toolbar flex="33" layout="column" layout-align="center center">
+    <div class="md-toolbar-tools" layout-align="center center">
+      <h1>{{title}}</h1>
 
 
         <md-button class="md-icon-button" ng-href="https://github.com/CalogeroMandracchia/ushar">
@@ -12,21 +13,17 @@
     </div>
   </md-toolbar>
 
-  <md-content layout-margin>
+  <md-content layout="row" layout-align="center center">
     <md-list>
-      <md-list-item class="md-1-line" ng-repeat="file in files" ng-click="goToPerson(file, $event)" class="noright">
+      <md-list-item ng-repeat="file in files" ng-click="goToPerson(file, $event)">
         <div class="md-list-item-text">
-          <h3>{{file}}</h3>
+          <h4>{{file}}</h4>
 
 
           <md-button class="md-icon-button" href="{{'http://' + hostname + ':' + port + '/api/media/download/' + file}}">
               <md-icon md-svg-icon="download.svg"> </md-icon>
-
-            </md-button>  
+          </md-button>  
         </div>
-
-            
-
         <md-divider inset></md-divider>
       </md-list-item>
     </md-list>
