@@ -9,8 +9,8 @@ const getHomeDir = () =>
 {
     try
     {
-        const folder = 'Desktop/ushar';
-        const dir = os.homedir() + '/' + folder;
+        let dir = os.homedir();
+        dir += '/Desktop/ushar';
         return dir;
     }
     catch (error)
@@ -20,11 +20,31 @@ const getHomeDir = () =>
     }
 };
 
+const getPort = () => 
+{
+    try
+    {
+        if(!process.env.MYPORT)
+        {
+            console.error("port is undefined!");
+            return "portNotFound";
+        }
+        return process.env.MYPORT;
+    }
+    catch (error)
+    {
+        console.error(error);
+        return 'error';
+    }
+};
+
+
 module.exports = 
 {
     logError,
     sendRes,
     makePromise,
     rejectPromise,
-    getHomeDir
+    getHomeDir,
+    getPort
 }

@@ -17,12 +17,17 @@ const HomeCtrl = function ($scope, $mdDialog, mediaServices, configServices)
       .then( (data) => { $scope.homedir = data.data.homedir} )
       .catch( lib.logError ); 
 
+    // $scope.port
+    configServices.getPort()
+      .then( (data) => { $scope.port = data.data.port} )
+      .catch( lib.logError );
+
   $scope.goToPerson = function(file, event) 
   {
     $mdDialog.show(
       $mdDialog.alert()
         .title('Download')
-        .textContent('http://' + $scope.hostname + ':3000/api/media/download/' + file)
+        .textContent('http://' + $scope.hostname + ':' + $scope.port + '/api/media/download/' + file)
         .ariaLabel('File inspect')
         .ok('Neat!')
         .targetEvent(event)

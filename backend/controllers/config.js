@@ -1,4 +1,4 @@
-const os = require("os");
+const os = require('os');
 const lib = require('./lib');
 
 //get hostname
@@ -10,16 +10,22 @@ const getHostname = (req, res) =>
       lib.sendRes(res, 200, { "hostname": hostname } );
 };
 
-
-
 const getHomeDir = (req, res) => 
 {
-      const dir = lib.getHomeDir();
-      console.log("homeDir: " + dir);
-      lib.sendRes(res, 200, { "homeDir": dir } );
+      const homeDir = lib.getHomeDir();
+      console.log("homeDir: " + homeDir);
+      lib.sendRes(res, 200, { "homeDir": homeDir } );
+};
+
+const getPort = (req, res) => 
+{
+      const port = lib.getPort();
+      console.log("port: " + port);
+      lib.sendRes(res, 200, { "port": port } );
 };
 
 module.exports = {
   getHostname,
   getHomeDir,
+  getPort
 }

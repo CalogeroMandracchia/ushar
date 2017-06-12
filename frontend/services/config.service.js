@@ -7,6 +7,9 @@ function configServices($http)
 
     //getHomeDir
     self.getHomeDir = () => { return $http.get('api/config/getHomeDir'); }
+
+    //getPort
+    self.getPort = () => { return $http.get('api/config/getPort'); }
 }
 
 
