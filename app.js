@@ -2,6 +2,7 @@
 
 require('dotenv').load();
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
@@ -11,7 +12,7 @@ const bodyParser = require('body-parser');
 const routesApi = require('./backend/routes/index');
 
 const app = express();
-
+app.use(cors());
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json({limit: '50gb'}));
@@ -19,13 +20,13 @@ app.use(bodyParser.json({limit: '50gb'}));
 app.use(bodyParser.urlencoded({limit: '50gb', extended: true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'frontend')));
+app.use(express.static(path.join(__dirname, 'frontend/public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/api', routesApi);
 
 app.use(function (req, res) {
-  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+  res.sendFile(path.join(__dirname, 'frontend/public', 'index.html'));
 });
 
 // catch 404 and forward to error handler
